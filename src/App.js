@@ -14,7 +14,7 @@ export const App = () => {
     setArr(newArr);
   };
 
-  const handleDeleteButton = (number) => {
+  const handleDeleteButton = (no) => {
     const deletedArr = arr.filter((_, index) => index !== no);
     setArr(deletedArr);
   };
