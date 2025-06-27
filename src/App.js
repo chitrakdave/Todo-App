@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { Title } from "./components/Title";
+import { NoTaskMessage } from "./components/NoTaskMessage";
+import "./App.css";
+import { AddTask } from "./components/AddTask";
+import { Tasks } from "./components/Tasks";
 
-function App() {
+export const App = () => {
+  const [arr, setArr] = useState([]);
+
+  const handleAddButton = (task, date) => {
+    const newArr = [...arr, { task: task, date: date }];
+
+    setArr(newArr);
+  };
+
+  const handleDeleteButton = (no) => {
+    const deletedArr = arr.filter((_, index) => index !== no);
+    setArr(deletedArr);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="d-flex flex-column align-items-center justify-content-center">
+      <Title> </Title>
+
+      <AddTask handleAddButton={handleAddButton}></AddTask>
+
+      {arr.length > 0 && (
+        <Tasks arr={arr} handleDeleteButton={handleDeleteButton} />
+      )}
+
+      {arr.length === 0 && <NoTaskMessage></NoTaskMessage>}
     </div>
   );
-}
-
-export default App;
+};
