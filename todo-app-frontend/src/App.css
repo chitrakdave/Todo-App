@@ -1,0 +1,75 @@
+.submitButton {
+  width: 78px;
+}
+
+.deleteButton {
+  width: 80px;
+  height: 38px;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.tasksContainer {
+  width: 100%;
+  max-width: 700px;
+  margin-top: 40px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+  display: table;
+  border-collapse: collapse; /* continuous lines */
+  border: 1px solid #dee2e6;
+  border-radius: 8px; /* ✅ rounded corners */
+  overflow: hidden; /* ✅ keeps borders inside radius */
+}
+
+.tasksContainer .headerRow,
+.tasksContainer .taskRow {
+  display: table-row;
+}
+
+.tasksContainer .headerRow {
+  background-color: #f8f9fa;
+  font-weight: bold;
+}
+
+.tasksContainer .colNo,
+.tasksContainer .colTask,
+.tasksContainer .colDate,
+.tasksContainer .colDelete {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  padding: 12px 15px;
+
+  border-top: 1px solid #dee2e6; /* keep horizontal lines */
+  border-bottom: 1px solid #dee2e6; /* keep horizontal lines */
+  border-left: none; /* remove vertical lines */
+  border-right: none; /* remove vertical lines */
+}
+
+/* column widths */
+.tasksContainer .colNo {
+  width: 50px;
+}
+
+.tasksContainer .colTask {
+  width: 300px; /* biggest */
+}
+
+.tasksContainer .colDate {
+  width: 150px;
+}
+
+.tasksContainer .colDelete {
+  width: 100px;
+}
+
+.noTask {
+  margin-top: 120px;
+  color: #6c757d;
+  font-weight: 500;
+  text-align: center;
+  font-style: italic;
+}
